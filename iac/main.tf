@@ -4,6 +4,15 @@ provider "azurerm" {
     }
 }
 
+terraform {
+    backend "azurerm" {
+        resource_group_name = "terraform-commons"
+        storage_account_name = "akrterraformstatefiles"
+        container_name = "sampleterraform"
+        key = "dev.tfstate"
+    }
+}
+
 resource "azurerm_resource_group" "akr-sampleterraform-rg" {
     name = "akr-sampleterraform-rg"
     location = "westeurope"
