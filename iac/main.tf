@@ -13,6 +13,11 @@ terraform {
     }
 }
 
+variable "imagebuild" {
+    type = string
+    description = "Latest Image Build"
+}
+
 resource "azurerm_resource_group" "akr-sampleterraform-rg" {
     name = "akr-sampleterraform-rg"
     location = "westeurope"
@@ -29,7 +34,7 @@ resource "azurerm_container_group" "akr-sampleterraform-cg" {
 
     container {
         name = "sampleterraform"
-        image = "krajniak/sampleterraform"
+        image = "krajniak/sampleterraform:${var.imagebuild}"
         cpu =  "1"
         memory = "1"
 
