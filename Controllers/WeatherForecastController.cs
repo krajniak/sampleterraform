@@ -13,7 +13,7 @@ namespace boardgameapi.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Mrozaca", "Chlodna", "Zimna", "Srednia", "Ciepla", "Cieplutka", "Gorąca", "Bardzo goraca", "Palaca"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
