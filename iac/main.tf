@@ -19,12 +19,12 @@ variable "imagebuild" {
 }
 
 resource "azurerm_resource_group" "akr-sampleterraform-rg" {
-    name = "akr-sampleterraform-rg"
+    name = "${var.prefix}-sampleterraform-rg"
     location = "westeurope"
 }
 
 resource "azurerm_container_group" "akr-sampleterraform-cg" {
-    name = "akr-sampleterraform-cg"
+    name = "${var.prefix}-sampleterraform-cg"
     location = azurerm_resource_group.akr-sampleterraform-rg.location
     resource_group_name = azurerm_resource_group.akr-sampleterraform-rg.name
 
